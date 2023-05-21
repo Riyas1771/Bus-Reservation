@@ -10,15 +10,15 @@ public class BusDemo {
 	BusDAO busdao=new BusDAO();
 	try {
 	busdao.DisplayBusInfo();
-		int userOpt = 1;
+		String userOpt = "y";
 		Scanner scanner = new Scanner(System.in);
 	
 		
 		
-		while(userOpt==1) {
-			System.out.println("Enter 1 to Book and 2 to exit");
-			userOpt = scanner.nextInt();
-			if(userOpt == 1) {
+		while(userOpt.equalsIgnoreCase("y")) {
+			System.out.println("Enter y to Book and n to exit");
+			userOpt = scanner.next();
+			if(userOpt.equalsIgnoreCase("y")) {
 				Booking booking = new Booking();
 				if(booking.isAvailable()) {
 					BookingDAO bookingdao=new BookingDAO();
